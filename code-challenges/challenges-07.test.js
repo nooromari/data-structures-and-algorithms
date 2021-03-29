@@ -8,6 +8,15 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
+  // let re =/\0/;
+  for (let i = 0; i < string.length; i++) {
+  if (string[i]==0) {
+    string.splice(string[i],string[i+1],'zero');
+    // string[i]= 'zero';
+  }
+    
+  }
+return string;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,6 +39,8 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  const map1 = arr.map(x => x+'?');
+  return map1;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,6 +55,9 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  // const newArr = [];
+  const map1 = arr.map(x => Math.pow(2,x));
+  return map1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,6 +68,8 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  const map1 = arr.map(x => Math.pow(2,x));
+  return map1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,6 +80,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  const map1 = arr.map(x => Math.pow(2,x));
+  return map1;
 };
 
 /* ------------------------------------------------------------------------------------------------
