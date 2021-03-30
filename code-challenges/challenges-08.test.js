@@ -9,7 +9,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
-  let stringArr = str.split('');
+  const stringArr = str.split('');
   return stringArr.splice(stringArr.length - 10);
 }
 
@@ -23,7 +23,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-
+ return arr.filter(element => typeof element === 'number');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +65,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let re = /\s*(u|o|i|e|a)\s*/;
+ return arr.filter(word => re.test(word));
 };
 
 
@@ -78,6 +80,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  return arr.filter(element => !forbiddenValues.includes(element));
 };
 
 /* ------------------------------------------------------------------------------------------------
