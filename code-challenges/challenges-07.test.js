@@ -8,15 +8,8 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
-  // let re =/\0/;
-  for (let i = 0; i < string.length; i++) {
-  if (string[i]==0) {
-    string.splice(string[i],string[i+1],'zero');
-    // string[i]= 'zero';
-  }
-    
-  }
-return string;
+  let re =/0/g;
+  return string.replace(re, 'zero');
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,9 +48,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  // const newArr = [];
-  const map1 = arr.map(x => Math.pow(2,x));
-  return map1;
+  const newArr =[];
+  for(let i = 0; i<arr.length; i++){
+    newArr.push(Math.pow(2,arr[i]));
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,8 +75,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  const map1 = arr.map(x => Math.pow(2,x));
-  return map1;
+  let newArr = [];
+  arr.forEach(item => {
+    newArr.push(Math.pow(2,item));
+  });
+return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
