@@ -33,7 +33,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
-  let newArr = arr.reduce( (a, val) => a+=val, 0 );
+  let newArr = arr.reduce((a, val) => a+=val, 0 );
   return newArr;
 };
 
