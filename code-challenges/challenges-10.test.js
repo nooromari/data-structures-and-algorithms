@@ -24,8 +24,20 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-  let newArr = arr.map(person => person.name);
-  return newArr;
+  // let newArr = arr.map(person =>  person.name.map(a=>{
+    
+  // }
+  // ));
+  // return newArr;
+  // let strArr = arr.name.split('');
+  // return strArr.reduce((acc, val, idx) => {
+  //   return acc += strArr[strArr.length - idx - 1];
+  // }, '')
+  return arr
+  .map(elem => elem.name
+    .split('')
+    .reverse()
+    .join(''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,6 +92,15 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  // let newInput = input.map(arr =>{
+  //   return arr.filter(num => num % 5 && typeof num ==='number'? Math.pow(2,num): false)
+  // });
+  // return newInput;
+  return input
+  .map(val => val
+    .filter(val2 => val2 % 5 == 0 && Number(val2) === val2)
+    .map(val3 => Math
+      .pow(2, val3)));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,6 +167,10 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  return data
+  .filter((elem) => (elem.gender == 'male' || elem.gender == 'female'))
+  .map(elem => elem.name)
+  .join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -156,6 +181,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  return data.reduce((accum, item) => {
+    if (accum == {}) {
+      accum = item;
+    } else {
+      return (parseInt(accum.height) < parseInt(item.height)) ? accum : item;
+    }
+  }, {}).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
