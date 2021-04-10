@@ -143,11 +143,17 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let nn=[str];
-  let revStr = nn.reduce((a,val,i)=>{
-   return a+=val[val.length-i];
-  },[])
-  return revStr;
+  // let nn=[str];
+  // let revStr = nn.reduce((a,val,i)=>{
+  //  return a+=val[val.length-i];
+  // },[])
+  // return revStr;
+
+  let strArray = str.split('');
+  const newArray = strArray.reduce((accumalator, val, idx) => {
+    return accumalator += strArray[strArray.length - idx - 1];
+  }, '')
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
