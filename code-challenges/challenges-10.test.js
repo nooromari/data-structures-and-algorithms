@@ -24,8 +24,7 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-  let newArr = arr.map(person => person.name);
-  return newArr;
+  return arr.map(person => person.name.split('').reverse().join(''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,6 +79,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let result = input.map(element => element.filter(num => (num % 5 === 0 && num.isInteger()))
+  .map( number => Math.pow(2,number) ))
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
