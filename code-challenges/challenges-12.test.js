@@ -95,6 +95,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  return data.map((ele,i)=> {
+    return {sales:`${ele} cookies`, time:hours[i]}
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,6 +123,9 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let number =0; 
+  let newArr = arr.map(store => store.items.filter(item => item.name === 'Treats'? number= item.quantity : 0) )
+  return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
