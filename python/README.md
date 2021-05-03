@@ -77,5 +77,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ## Table of Contents
 
-1. [array-reverse](python/challenges/array_reverse)
-1. [array_shift](python/challenges/array_shift)
+1. [array-reverse](challenges/array_reverse)
+1. [array-shift](challenges/array_shift)
