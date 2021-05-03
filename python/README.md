@@ -77,16 +77,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ## Table of Contents
 
-1. [array-reverse]()
-1. [array_shift]()
-
- - [ ] Top-level README “Table of Contents” is updated
- - [ ] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
- - [ ] README for this challenge is complete
-     - [ ] Summary, Description, Approach & Efficiency, Solution
-     - [ ] Link to code
-     - [ ] Picture of whiteboard
+1. [array-reverse](python/challenges/array_reverse)
+1. [array_shift](python/challenges/array_shift)

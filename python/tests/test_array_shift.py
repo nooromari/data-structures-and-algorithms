@@ -9,7 +9,7 @@ def test_insertShiftArray():
     assert actual == expected
 
 
-# def test_insertShiftArray2():
-#     expected = [4, 8, 15, 16, 23, 42]
-#     actual = insertShiftArray([4, 8, 15, 23, 42], 16)
-#     assert actual == expected
+def test_insertShiftArray2():
+    expected = [4, 8, 15, 16, 23, 42]
+    actual = insertShiftArray([4, 8, 15, 23, 42], 16)
+    assert actual == expected
