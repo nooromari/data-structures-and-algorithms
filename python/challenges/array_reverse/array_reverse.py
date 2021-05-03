@@ -6,5 +6,5 @@ def reverseArray(list):
     return newlist
 
 
-testlist=[1, 2, 3, 4, 5, 6]
-print(reverseArray(testlist))
+# testlist=[1, 2, 3, 4, 5, 6]
+# print(reverseArray(testlist))
