@@ -22,3 +22,4 @@ def test_reverseArray3():
                 103, 101, 97, 89, 83, 79, 73, 71, 67, 61, 59, 53, 47, 43, 41, 37, 31, 29, 23, 19, 17, 13, 11, 7, 5, 3, 2]
     actual = reverseArray(input)
     assert actual == excepted
+
