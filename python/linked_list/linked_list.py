@@ -1,17 +1,3 @@
-# class LinkedList:
-#     """
-#     Put docstring here
-#     """
-
-#     def __init__(self):
-#         # initialization here
-#         pass
-
-#     def some_method(self):
-#         # method body here
-#         pass
-
-
 # Define Node
 class Node:
   def __init__(self, data=None):
@@ -21,7 +7,6 @@ class Node:
   
   def __str__(self):
       return f"{self.data}"
-   
 
 # Define linked list
 class Linked_list:
@@ -48,34 +33,34 @@ class Linked_list:
     return is_include
       
 
-  # __str__ , __repr__
   def __str__(self):
     """ Returns a string representaiton of the linked list
         1 -> 3 -> 4 -> Null
     """
     # step 0 - create a new empty string
-    output = ""
+    list_data = ""
 
     # step 1 iterate over each node
     current = self.head
     while current:
       # step 2 - insert each data to the string
-      output += "{%s} -> " %(current.data,)
+      list_data += "{ %s } -> " %(current.data,)
       # step 2b:  move to the next item
       current = current.next
-    output += " NULL"
+    list_data += "NULL"
     # step 3 - return the final string
-    return output
+    return list_data
   
 
 
 # Write program here
 if __name__ == "__main__":
   linked = Linked_list()
+  linked.insert()
   linked.insert("Muhannad")
   linked.insert("Manar")
   linked.insert(10)
   print(linked)
-  print(linked.includes(55),linked.includes("Manar"),linked.includes(5))
+  print(linked.includes(55),linked.includes("Manar"),linked.includes(10))
 
 # I am finally here
