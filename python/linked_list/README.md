@@ -27,5 +27,8 @@ a method takes any value as an argument and adds a new node with that value to t
 a method takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 
 
+
+## Solution
 - [code](linked_list.py)
 
+![linked-list](../challenges/assets/linked-list.jpg)
