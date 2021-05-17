@@ -92,9 +92,37 @@ def test_insertBefore4(new_list):
     assert new_list.insertBefore(4,5) ==  None
 
 
+def test_kthFromEnd(linked,new_list,list_of_kths):
+    """
+    Where k is greater than the length of the linked list
+    Where k and the length of the list are the same
+    Where k is not a positive integer
+    “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+    """
+    actual = [linked.kthFromEnd(i) for i in list_of_kths]
+    expected = ['IndexError',1,'IndexError',3 , 2 ]
+    assert actual == expected
+def test_kthFromEnd2(linked):
+    """
+    Where the linked list is of a size 1
+    """
+    linked.append(1)
+    actual = linked.kthFromEnd(0)
+    expected = 1
+    assert actual == expected
+    assert linked.length() == 1
+
+
 @pytest.fixture
-def list_test():
-    linked = LinkedList()
+def linked():
+    return LinkedList()
+
+@pytest.fixture
+def list_of_kths():
+    return [-1, 2, 3, 1, 0]
+
+@pytest.fixture
+def list_test(linked):
     linked.insert()
     linked.insert(0)
     linked.insert(1)
@@ -102,8 +130,7 @@ def list_test():
     return linked
 
 @pytest.fixture
-def new_list():
-    linked = LinkedList()
+def new_list(linked):
     linked.append(1)
     linked.append(3)
     linked.append(2)

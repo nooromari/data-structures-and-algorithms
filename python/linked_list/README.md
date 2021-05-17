@@ -2,6 +2,18 @@
 
 A Linked List is a sequence of Nodes that are connected/linked to each other. The most defining feature of a Linked List is that each Node references the next Node in the link.
 
+
+- **Get start**:
+1. clone the repo `git clone https://github.com/nooromari/data-structures-and-algorithms`
+
+1. change directory `cd data-structures-and-algorithms/python`
+
+1. open linked_list.py in linked_list folder
+
+1. create new instance by write 
+   `linked = Linked_list()`
+
+
 ## Challenge 5
 
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -66,15 +78,6 @@ looping through the linked list until find the place we want to insert in it.
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
 
-- **Get start**:
-1. clone the repo `git clone https://github.com/nooromari/data-structures-and-algorithms`
-
-1. change directory `cd data-structures-and-algorithms/python`
-
-1. open linked_list.py in linked_list folder
-
-1. create new instance by write 
-   `linked = Linked_list()`
 
 1. use LinkdList class methods :
 
@@ -106,3 +109,39 @@ looping through the linked list until find the place we want to insert in it.
         **output** : "1 -> 3 -> 5 -> 2 -> NULL"
 
 
+
+## Challenge 7 Summary
+<!-- Description of the challenge -->
+Write a method for the Linked List class which takes a number, `k`, as a parameter. Return the node’s value that is `k` from the end of the linked list.
+
+### Whiteboard Process
+<!-- Embedded whiteboard image -->
+![ll-kth-from-end](../challenges/assets/ll-kth-from-end.jpg)
+
+
+### Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+defined length method which looping through the linked list to calculate the length, then looping in the range of (lenght - k) to find the value of index (kth from the end of the list).
+
+
+**Big O** :
+- Time O(N) 
+- space O(1)
+
+
+### Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+ - use LinkdList class method `kthFromEnd(k)`:
+
+   *examples*
+
+    ```
+    linked.append(1)
+    linked.append(3)
+    linked.append(2)
+    linked.kthFromEnd(0)
+    ```
+
+      **output** : 2
