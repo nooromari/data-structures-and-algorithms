@@ -58,17 +58,17 @@ class LinkedList:
         add a new node with the given newValue immediately before the first value node
         """
         try:
-          if self.includes(data):
-              new_node = Node(new_data)
-              current = self.head
-              while (current):
-                  if current.data == data:
-                      new_node.next = current.next
-                      current.next = new_node
-                      break
-                  current = current.next
+            if self.includes(data):
+                new_node = Node(new_data)
+                current = self.head
+                while (current):
+                    if current.data == data:
+                        new_node.next = current.next
+                        current.next = new_node
+                        break
+                    current = current.next
         except:
-          raise Exception("the value not found in the list")
+            raise Exception("the value not found in the list")
 
     def insertBefore(self, data, new_data):
         """
@@ -89,7 +89,28 @@ class LinkedList:
                             break
                         current = current.next
         except:
-          raise Exception("the value not found in the list")
+            raise Exception("the value not found in the list")
+
+    def kthFromEnd(self, k: int):
+        """Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+        """
+        length = self.length()
+
+        if k >= length or k < 0:
+            return 'IndexError'
+        current = self.head
+        for i in range(length-k):
+            if i == length-k-1:
+                return current.data
+            current = current.next
+
+    def length(self):
+        length = 0
+        current = self.head
+        while(current):
+            length += 1
+            current = current.next
+        return length
 
     def __str__(self):
         """ Returns a string representaiton of the linked list
@@ -112,18 +133,14 @@ class LinkedList:
 # Write program here
 if __name__ == "__main__":
     linked = LinkedList()
-    # linked.insert()
-    # linked.insert("Muhannad")
-    # linked.insert("Manar")
-    # linked.insert(10)
-    # linked.insert(6)
     linked.append(1)
     linked.append(3)
     linked.append(2)
     linked.insertAfter(3, 10)
     linked.insertBefore(100, 7)
-    linked.insertAfter(25,20)
+    linked.insertAfter(25, 20)
+    linked.kthFromEnd(2)
+    print(linked.length())
     print(linked)
-    # print(linked.includes(55),linked.includes("Manar"),linked.includes(10))
+    
 
-# I am finally here
