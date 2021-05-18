@@ -4,7 +4,7 @@ Write a function called zipLists which takes two linked lists as arguments. Zip 
 
 ### Whiteboard Process
 <!-- Embedded whiteboard image -->
-![ll-zip](../challenges/assets/ll-zip.jpg)
+![ll-zip](../assets/ll-zip.jpg)
 
 
 ### Approach & Efficiency
