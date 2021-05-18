@@ -19,3 +19,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [array-binary-search](python/challenges/array_binary_search)
 1. [linked-list](python/linked_list)
 1. [ll-insertions](python/linked_list)
+1. [ll-zip](python/challenges/ll_zip)
