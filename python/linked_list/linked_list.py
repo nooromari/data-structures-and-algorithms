@@ -112,6 +112,21 @@ class LinkedList:
             current = current.next
         return length
 
+    def reverce(self):
+
+        new_list = LinkedList()
+
+        # method inside the class linkedList
+
+        current = self.head
+
+        while(current):
+
+            new_list.insert(current)
+
+            current = current.next
+        return new_list
+
     def __str__(self):
         """ Returns a string representaiton of the linked list
             1 -> 3 -> 4 -> Null
@@ -142,5 +157,6 @@ if __name__ == "__main__":
     linked.kthFromEnd(2)
     print(linked.length())
     print(linked)
+    print(linked.reverce())
     
 
