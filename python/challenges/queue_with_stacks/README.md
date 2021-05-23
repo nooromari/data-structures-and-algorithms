@@ -8,6 +8,7 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
+![queue_with_stacks](../assets/queue_with_stacks.jpg)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->

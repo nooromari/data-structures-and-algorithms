@@ -12,17 +12,20 @@ def test_queue_dequeue(queue_test):
     actual = queue_test.dequeue()
     expected = 0
     assert actual == expected
+    actual = f"{queue_test}"
+    expected ='2 -> 1 -> NULL'
+    assert actual == expected
     queue_test.dequeue()
     queue_test.dequeue()
     actual = queue_test.dequeue()
-    expected = 'the stack is empty'
+    expected = 'queue is empty'
     assert actual == expected   
 
   
 
 @pytest.fixture
 def queue():
-    return Pseudo_Queue()
+    return PseudoQueue()
 
 @pytest.fixture
 def queue_test(queue):
