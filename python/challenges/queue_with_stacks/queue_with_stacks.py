@@ -1,5 +1,3 @@
-
-
 class Node:
     def __init__(self, value=None):
         self.value = value
@@ -55,45 +53,72 @@ class Stack:
 
 
 
-class Pseudo_Queue(Stack):
+class Pseudo_Queue():
 
     def __init__(self):
-        super().__init__()
         self.enqueue_front = Stack()
         self.dequeue_rear = Stack()
+        self.rear = 0
         # self.front = None
         # self.rear = None
 
-    def enqueue(self, value):
+    # def enqueue(self, value):
+    #     """
+    #      inserts value into the PseudoQueue, using a first-in, first-out approach.
+    #     """
+    #     self.enqueue_front.push(value)
+        # self.front = Node(self.enqueue_front.peek())
+
+    # def dequeue(self):
+    #     """
+    #     extracts a value from the PseudoQueue, using a first-in, first-out approach.
+    #     """
+    #     pass
+
+    def enqueue(self,value):
         """
-         inserts value into the PseudoQueue, using a first-in, first-out approach.
+        inserts value into the Pseudo_Queue, using a first-in, first-out approach.
         """
         self.enqueue_front.push(value)
-        # self.front = Node(self.enqueue_front.peek())
+        self.rear = self.enqueue_front.top
+        current = self.rear
+        while current.next:
+            current = current.next
+        self.dequeue_rear.push(current.value)
+
 
     def dequeue(self):
         """
         extracts a value from the PseudoQueue, using a first-in, first-out approach.
         """
-        pass
+        try:
+            # current = self.rear
+            # while current.next:
+            #     current = current.next
+            # self.dequeue_rear.push(current.value)
+            return self.dequeue_rear.pop()
+        except Exception :
+            return "empty"
+
+
+
 
     def __str__(self):
-        super().__str__()
-    #     """ Returns a string representaiton of the linked list
-    #         1 -> 3 -> 4 -> Null
-    #     """
-    #     # step 0 - create a new empty string
-    #     list_data = ""
-    #     # step 1 iterate over each node
-    #     current = self.top
-    #     while current:
-    #         # step 2 - insert each data to the string
-    #         list_data += f"{current.value} -> "
-    #         # step 2b:  move to the next item
-    #         current = current.next
-    #     list_data += "NULL"
-    #     # step 3 - return the final string
-    #     return list_data
+        """ Returns a string representaiton of the linked list
+            1 -> 3 -> 4 -> Null
+        """
+        # step 0 - create a new empty string
+        list_data = ""
+        # step 1 iterate over each node
+        current = self.enqueue_front.top
+        while current:
+            # step 2 - insert each data to the string
+            list_data += f"{current.value} -> "
+            # step 2b:  move to the next item
+            current = current.next
+        list_data += "NULL"
+        # step 3 - return the final string
+        return list_data
 
 
 
@@ -101,6 +126,9 @@ if __name__ =="__main__":
     queue = Pseudo_Queue()
     queue.enqueue(5)
     queue.enqueue(9)
-    queue.enqueue(5)
-    queue.enqueue(9)
+    # queue.enqueue(5)
+    # queue.enqueue(9)
     print(queue)
+    print(queue.dequeue())
+    print(queue)
+
