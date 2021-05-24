@@ -1,5 +1,5 @@
 import pytest
-from stacks_and_queues.stacks_and_queues import Stack, Queue
+from Data_Structures.stacks_and_queues.stacks_and_queues import Stack, Queue
 
 
 def test_stack(stack_test):

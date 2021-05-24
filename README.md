@@ -17,9 +17,10 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [array-reverse](python/challenges/array_reverse)
 1. [array-shift](python/challenges/array_shift)
 1. [array-binary-search](python/challenges/array_binary_search)
-1. [linked-list](python/linked_list)
-1. [ll-insertions](python/linked_list)
+1. [linked-list](python/Data_Structures/linked_list)
+1. [ll-insertions](python/Data_Structures/linked_list)
 1. [ll-zip](python/challenges/ll_zip)
-1. [stack-and-queue](python/stack_and_queue)
+1. [stack-and-queue](python/Data_Structures/stack_and_queue)
 1. [queue-with-stacks](python/challenges/queue_with_stacks)
+1. [fifo-animal-shelter](python/challenges/fifo_animal_shelter)
 

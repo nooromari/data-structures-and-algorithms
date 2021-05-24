@@ -1,5 +1,5 @@
 import pytest
-from linked_list.linked_list import *
+from Data_Structures.linked_list.linked_list import *
 
 
 def test_insert(list_test):

@@ -61,7 +61,7 @@ class Stack(Node):
         return list_data
 
 
-class Queue(Node):
+class Queue:
     def __init__(self):
         self.front = None
         self.rear = None
