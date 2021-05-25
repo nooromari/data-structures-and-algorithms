@@ -45,16 +45,19 @@ def test_queue_dog_dequeue(queue_dog_test):
     assert actual == expected
 
 
-# def test_queue_cat_multiple_dequeue(queue_cat_test):
-#     for num in range(4):
-#         queue_cat_test.dequeue()
-#     with pytest.raises(EmptyQueueException):
-#         queue_cat_test.dequeue()
-# def test_queue_dog_multiple_dequeue(queue_dog_test):
-#     for num in range(4):
-#         queue_dog_test.dequeue()
-#     with pytest.raises(EmptyQueueException):
-#         queue_dog_test.dequeue()
+def test_queue_cat_multiple_dequeue(queue_cat_test):
+    for _ in range(4):
+        queue_cat_test.dequeue()
+    actual = queue_cat_test.dequeue()
+    expected = 'the queue is empty'
+    assert actual == expected 
+
+def test_queue_dog_multiple_dequeue(queue_dog_test):
+    for _ in range(4):
+        queue_dog_test.dequeue()
+    actual = queue_dog_test.dequeue()
+    expected = 'the queue is empty'
+    assert actual == expected 
 
 @pytest.fixture
 def queue_cat_test():
