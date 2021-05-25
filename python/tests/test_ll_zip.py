@@ -1,5 +1,5 @@
 import pytest
-from linked_list.linked_list import *
+from Data_Structures.linked_list.linked_list import *
 from challenges.ll_zip.ll_zip import zipLists
 
 def test_zipLists(list1,list2):

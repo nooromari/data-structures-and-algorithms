@@ -60,7 +60,7 @@ a method takes any value as an argument and returns a boolean result depending o
 
 ### Whiteboard Process
 <!-- Embedded whiteboard image -->
-![ll-insertions](../challenges/assets/ll-insertions.jpg)
+![ll-insertions](../../challenges/assets/ll-insertions.jpg)
 
 
 ### Approach & Efficiency
