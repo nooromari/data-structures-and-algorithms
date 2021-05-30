@@ -14,7 +14,10 @@ def test_binary_search_tree(binary_search_tree):
     expected = [True, False]
     assert actual == expected
 
-
+def test_find_maximum_value(binary_tree):
+    actual = binary_tree.find_maximum_value()
+    expected = 5
+    assert actual == expected
 
 @pytest.fixture
 def binary_tree():
@@ -39,5 +42,4 @@ def binary_search_tree():
   bst.add(100)
   bst.add(0)
   return bst
-#   print(sb.contains(3),sb.contains(13))
-#   print(sb.in_order())
+

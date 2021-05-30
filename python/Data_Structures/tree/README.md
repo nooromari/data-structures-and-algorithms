@@ -31,3 +31,27 @@ Big O:
 - `contains` that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 
+## Challenge 16 summary:
+<!-- Description of the challenge -->
+Write an instance method called `find-maximum-value`. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![find-maximum-binary-tree](../../challenges/assets/find-maximum-binary-tree.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O:
+- time -> O(n)
+- space -> O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+```
+  print(binary_tree.find_maximum_value())
+```
+output: max number
+
+
+Note: *collaburate with tala and manar*
