@@ -1,3 +1,43 @@
+# from Data_Structures.stackes_and_queue.stackes_and_queue import Queue
+
+class Node:
+    def __init__(self, value=None):
+        self.value = value
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self, value):
+        """ Add an item to the rear fo the queue """
+        node = Node(value)
+
+        if not self.front:
+
+            self.front = node
+            self.rear = node
+        else:
+            self.rear.next = node
+            self.rear = self.rear.next
+
+    def dequeue(self):
+        """ removed an item to the front fo the queue """
+        try:
+            temp = self.front
+            self.front = self.front.next
+            temp.next = None
+            return temp.value
+        except Exception:
+            return "the queue is empty"
+
+    def is_empty(self):
+        """ Returns True if Empty and false otherwise """
+        if self.front:
+            return False
+        return True
+
 class TNode:
   def __init__(self, value=None):
     self.value = value
@@ -74,10 +114,25 @@ class Binary_tree:
     inner(self.root)
     return self.max_val
 
+  def breadth_first(self):
+    """traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order """
+    self.breadth_first_list = []
+    queque = Queue()
+    queque.enqueue(self.root)
+    while not queque.is_empty():
+      ele = queque.dequeue()
+      self.breadth_first_list.append(ele.value)
+      if ele.left is not None:
+        queque.enqueue(ele.left)
+      if ele.right is not None:
+        queque.enqueue(ele.right)
+    return self.breadth_first_list
+
 class Binary_search_tree:
   
   def __init__(self,value=None):
     self.node = TNode(value)
+
   def add(self,value):
     if (self.node.value == None):
       self.node.value = value
@@ -104,6 +159,7 @@ class Binary_search_tree:
     return lst
 
   def contains(self,value,parent= None):
+    """check if the value inside the tree"""
     if value == self.node.value: 
       return True
     if (value < self.node.value):
@@ -119,12 +175,15 @@ class Binary_search_tree:
 
 
 if __name__ == "__main__":
-  node1 = TNode(100)
-  node1.left = TNode(2)
-  node1.right = TNode(23)
-  node1.right.left = TNode(4)
-  node1.right.right = TNode(5)
-  node1.right.right = TNode(15)
+  node1 = TNode(2)
+  node1.left = TNode(7)
+  node1.right = TNode(5)
+  node1.left.left = TNode(2)
+  node1.left.right = TNode(6)
+  node1.left.left.left = TNode(5)
+  node1.left.right.right = TNode(11)
+  node1.right.right = TNode(9)
+  node1.right.right.left = TNode(4)
   binary_tree = Binary_tree(node1)
   print(binary_tree.pre_order())
   print("-"*20)
@@ -134,6 +193,7 @@ if __name__ == "__main__":
   print(binary_tree.post_order())
 
   print(binary_tree.find_maximum_value())
+  print(binary_tree.breadth_first())
 
   sb = Binary_search_tree()
   sb.add(5)
