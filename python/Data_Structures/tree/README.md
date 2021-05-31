@@ -55,3 +55,39 @@ output: max number
 
 
 Note: *collaburate with tala and manar*
+
+## Challenge 17 summary:
+<!-- Description of the challenge -->
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![breadth-first](../../challenges/assets/breadth-first.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O:
+- time -> O(n)
+- space -> O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+  ```
+  node = TNode(2)
+  node.left = TNode(7)
+  node.right = TNode(5)
+  node.left.left = TNode(2)
+  node.left.right = TNode(6)
+  node.left.left.left = TNode(5)
+  node.left.right.right = TNode(11)
+  node.right.right = TNode(9)
+  node.right.right.left = TNode(4)
+  binary_tree = Binary_tree(node)
+
+  print(binary_tree.breadth_first())
+  ```
+**output**: [2, 7, 5, 2, 6, 9, 5, 11, 4]
+
+
+Note: *collaburate with tala, manar and raneem.*
