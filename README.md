@@ -26,3 +26,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [multi-bracket-validation](python/challenges/multi_bracket_validation)
 1. [tree](python/Data_Structures/tree)
 1. [find-maximum-binary-tree](python/Data_Structures/tree)
+1. [insertion-sort](python/challenges/insertion_sort)
