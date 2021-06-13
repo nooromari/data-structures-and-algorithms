@@ -30,4 +30,6 @@ Big O:
 **output**: [4, 8, 15, 16, 23, 42]
 
 
+- [code](insertion_sort.py)
+
 *Collaburated with Manar.*
