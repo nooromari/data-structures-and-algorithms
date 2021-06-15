@@ -8,7 +8,6 @@ def quickSort(arr, left, right):
 
 def partition(arr, left, right):
     pivot = arr[right]
-    print('pivot', pivot)
 
     low = left - 1
     for i in range(left,right):
@@ -23,7 +22,6 @@ def swap(arr, i, low):
     temp = arr[i]
     arr[i] = arr[low]
     arr[low] = temp
-    print('arr swap', arr)
 
 
 

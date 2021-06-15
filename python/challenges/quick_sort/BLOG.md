@@ -34,3 +34,59 @@ ALGORITHM Swap(arr, i, low)
     arr[i] <-- arr[low]
     arr[low] <-- temp
 ```
+
+## Trace
+
+- Sample Array: [8,4,23,42,16,15]
+
+- *Pass 1:*
+    - pivot 15
+
+    if  8  <=  15 True
+
+        - before swep : [8, 4, 23, 42, 16, 15] 
+        - swep between arr[0] = 8 and arr[0] = 8
+        - after swap [8, 4, 23, 42, 16, 15]
+
+    if  4  <=  15 True
+
+        - before swep : [8, 4, 23, 42, 16, 15] 
+        - swep between arr[1] = 4 and arr[1] = 4
+        - after swap [8, 4, 23, 42, 16, 15]
+
+    if  23  <=  15 False
+
+    if  42  <=  15 False
+
+    if  16  <=  15 False
+
+
+    - before swep : [8, 4, 23, 42, 16, 15] 
+    - swep between arr[5] = 15 and arr[2] = 23
+    - after swap [8, 4, 15, 42, 16, 23]
+
+- *Pass 2:*
+    - pivot 4
+
+    if  8  <=  4 False
+
+        - before swep : [8, 4, 15, 42, 16, 23] 
+        - swep between arr[1] = 4 and arr[0] = 8
+        - after swap [4, 8, 15, 42, 16, 23]
+
+- *Pass 3:*
+    - pivot 23
+
+    if  42  <=  23 False
+
+    if  16  <=  23 True
+
+        - before swep : [4, 8, 15, 42, 16, 23] 
+        - swep between arr[4] = 16 and arr[3] = 42
+        - after swap [4, 8, 15, 16, 42, 23]
+
+    - before swep : [4, 8, 15, 16, 42, 23] 
+    - swep between arr[5] = 23 and arr[4] = 42
+    - after swap [4, 8, 15, 16, 23, 42]
+
+- **Result:** [4, 8, 15, 16, 23, 42]
