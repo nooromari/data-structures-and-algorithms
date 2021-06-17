@@ -41,3 +41,5 @@ The hash code is used again to read something from the hash map. Take the key, r
 - `hash()`
 
     The hash will accept a key as a string, conduct the hash, and then return the index of the array where the key/value should be placed.
+
+[code](./hashtable.py)
