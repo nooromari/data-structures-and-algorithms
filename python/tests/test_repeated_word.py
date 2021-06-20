@@ -1,0 +1,1 @@
+from challenges.repeated_word.repeated_word import repeated_word
