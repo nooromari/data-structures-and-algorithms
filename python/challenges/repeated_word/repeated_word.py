@@ -2,7 +2,6 @@ def repeated_word(str):
     splitted_str = split_str(str)
     new_list = []
     for s in splitted_str:
-        print(s.lower())
         if s.lower() in new_list:
             return s
         new_list.append(s.lower()) 
