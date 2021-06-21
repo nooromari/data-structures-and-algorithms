@@ -1,12 +1,22 @@
+from Data_Structures.hashtable.hashtable import Hashmap
+
 def repeated_word(str):
+    """
+    Take a text and return the first repeated word
+    """
     splitted_str = split_str(str)
-    new_list = []
+    hashmap = Hashmap()
     for s in splitted_str:
-        if s.lower() in new_list:
-            return s
-        new_list.append(s.lower()) 
+        lower_word = s.lower()
+        if hashmap.contains(lower_word):
+            return lower_word
+        hashmap.add(lower_word,1)
+
 
 def split_str(str):
+    """
+    Split the text to a list of words
+    """
     str = str.replace(',','')
     list_str = str.split(' ')
     return list_str
