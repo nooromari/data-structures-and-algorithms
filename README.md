@@ -34,3 +34,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [hashtable](python/Data_Structures/hashtable)
 1. [repeated-word](python/challenges/repeated_word)
 1. [tree-intersection](python/challenged/tree_intersection)
+1. [left-join](python/challenged/left_join)
