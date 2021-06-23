@@ -5,13 +5,11 @@ def left_join(hash_left,hash_right):
     returns all the values from the left table, plus matched values from the right table or 'None' in case of no matching join predicate.
     """
     result_hash = Hashmap()
-    for key in hash_left.map :
-        if key :
-            result_hash.add(key.head.data[0], [key.head.data[1],None])
-    for key in hash_right.map :
-        if key :
-            if result_hash.contains(key.head.data[0]):
-                result_hash.add(key.head.data[0], [hash_left.get(key.head.data[0]),key.head.data[1]])
+    for key in hash_left :
+         result_hash.add(key, [hash_left.get(key),None])
+    for key in hash_right :
+        if result_hash.contains(key):
+            result_hash.add(key, [hash_left.get(key),hash_right.get(key)])
     
     return result_hash
 
