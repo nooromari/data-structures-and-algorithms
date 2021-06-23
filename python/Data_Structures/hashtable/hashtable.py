@@ -77,6 +77,16 @@ class Hashmap:
         string_hashmap = ' -> '.join(output)
         return string_hashmap
 
+    def __iter__(self):
+        """
+        iter throw the keys in the hashmap
+        """
+        for x in self.map:
+            if x:
+                current = x.head
+                while current:
+                    yield current.data[0]
+                    current = current.next
 
 
 if __name__ == "__main__":
