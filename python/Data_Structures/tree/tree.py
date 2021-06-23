@@ -128,6 +128,42 @@ class Binary_tree:
         queque.enqueue(ele.right)
     return self.breadth_first_list
 
+  def binaryTreePaths(self):
+    """
+    return all tha paths for a binary tree
+    """
+    self.paths = []
+    self.path = []
+        
+    def walk(node):
+        if node:
+          self.path.append(node.value)
+
+          if (not node.left) and (not node.right):
+            p = self.path.copy()
+            self.paths.append(p)
+
+          if node.left:
+            walk(node.left)
+  
+          if node.right:
+            walk(node.right)
+          self.path.pop() 
+            
+    walk(self.root)
+    return self.paths
+
+  def binaryTreeShortestPath(self):
+    """
+    return tha shortest path for a binary tree
+    """
+    paths = self.binaryTreePaths()
+    shortest = paths[0]
+    for path in paths :
+      if len(path) < len(shortest):
+        shortest = path
+    return shortest
+    
 class Binary_search_tree:
   
   def __init__(self,value=None):
@@ -178,22 +214,27 @@ if __name__ == "__main__":
   node1 = TNode(2)
   node1.left = TNode(7)
   node1.right = TNode(5)
+  node1.right.left = TNode(4)
   node1.left.left = TNode(2)
   node1.left.right = TNode(6)
   node1.left.left.left = TNode(5)
   node1.left.right.right = TNode(11)
   node1.right.right = TNode(9)
-  node1.right.right.left = TNode(4)
+  # node1.right.right.left = TNode(4)
   binary_tree = Binary_tree(node1)
-  print(binary_tree.pre_order())
-  print("-"*20)
-  print(binary_tree.in_order())
+  # print(binary_tree.pre_order())
+  # print("-"*20)
+  # print(binary_tree.in_order())
 
-  print("-"*20)
-  print(binary_tree.post_order())
+  # print("-"*20)
+  # print(binary_tree.post_order())
 
-  print(binary_tree.find_maximum_value())
-  print(binary_tree.breadth_first())
+  # print(binary_tree.find_maximum_value())
+  # print(binary_tree.breadth_first())
+
+  print(binary_tree.binaryTreePaths())
+  print(binary_tree.binaryTreeShortestPath())
+
 
   sb = Binary_search_tree()
   sb.add(5)
@@ -204,5 +245,5 @@ if __name__ == "__main__":
   sb.add(6)
   sb.add(100)
   sb.add(0)
-  print(sb.contains(3),sb.contains(13))
-  print(sb.in_order())
+  # print(sb.contains(3),sb.contains(13))
+  # print(sb.in_order())
