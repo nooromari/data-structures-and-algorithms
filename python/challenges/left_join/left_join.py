@@ -6,10 +6,7 @@ def left_join(hash_left,hash_right):
     """
     result_hash = Hashmap()
     for key in hash_left :
-         result_hash.add(key, [hash_left.get(key),None])
-    for key in hash_right :
-        if result_hash.contains(key):
-            result_hash.add(key, [hash_left.get(key),hash_right.get(key)])
+        result_hash.add(key, [hash_left.get(key),hash_right.get(key)])
     
     return result_hash
 
