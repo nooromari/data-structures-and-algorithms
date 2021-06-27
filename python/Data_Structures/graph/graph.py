@@ -39,12 +39,41 @@ class Graph:
         if vertex in self._adjacency_list :
             n = [(v.vertex, v.wight) for v in self._adjacency_list[vertex]]
             return n
-        else: 
-            return 'This value is not exist'
+        # else: 
+        #     return 'This value is not exist'
 
     def size(self):
         """ Returns the total number of nodes in the graph """
         return len(self._adjacency_list)
+
+    def breadth_first_search(self, start_vertex=None, action=(lambda x: None)):
+        """ Return a collection of nodes in the order of breadth-first traversal. """
+        try:
+            queue = Queue()
+            visited = []
+
+            queue.enqueue(start_vertex)
+            visited.append(start_vertex)
+
+            while not queue.is_empty():
+                current_vertex = queue.dequeue()
+                action(current_vertex)
+                neighbors = self.get_neighbors(current_vertex)
+
+                for edge in neighbors:
+                    neighbor_vertex = edge[0]
+
+                    if neighbor_vertex in visited:
+                        continue
+                    else:
+                        visited.append(neighbor_vertex)
+                    queue.enqueue(neighbor_vertex)
+
+            return visited 
+        except TypeError:
+            return 'value not exist'
+
+    
 
     def __str__(self) :
         if self._adjacency_list:
@@ -65,19 +94,21 @@ if __name__ == "__main__":
     print( g.add_node('B'))
     print( g.add_node('C'))
     print( g.add_node('D'))
-    print( g.add_node('A'))
     print('-----------------')
-    g.add_edge('A','B')
     g.add_edge('A','C')
-    g.add_edge('B','D')
-    print(g)
-    print(g.add_edge('B','6'))
-    print(g.get_nodes())
-    print(g.size())
-    print(g.get_neighbors('A'))
-    print(g.get_neighbors('B'))
-    print(g.get_neighbors('C'))
-    print(g.get_neighbors('v'))
+    g.add_edge('A','B')
+    g.add_edge('C','D')
+    g.add_edge('B','A')
+    # print(g)
+    # print(g.add_edge('B','6'))
+    # print(g.get_nodes())
+    # print(g.size())
+    # print(g.get_neighbors('A'))
+    # print(g.get_neighbors('B'))
+    # print(g.get_neighbors('C'))
+    # print(g.get_neighbors('v'))
+    print('-----------------------')
+    print(g.breadth_first_search(''))
 
 
 

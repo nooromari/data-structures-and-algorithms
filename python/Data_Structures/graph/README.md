@@ -62,4 +62,29 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - Arguments: none.
 - Returns: the total number of nodes in the graph.
 
+
+# Breadth-First Traversal of a Graph
+
+## Challenge 36
+
+Implement a breadth-first traversal on a graph.
+
+**breadth first**
+
+- Arguments: Node
+- Return: A collection of nodes in the order they were visited.
+- Display the collection
+
+
+## Approach & Efficiency
+
+Big O:
+- Time -> O(n)
+- Space -> O(n)
+
+## Solution
+
+![graph-breadth-first](../../challenges/assets/graph-breadth-first.jpg)
+
 [code](graph.py)
+
