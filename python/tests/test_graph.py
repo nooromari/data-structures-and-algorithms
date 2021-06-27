@@ -55,7 +55,7 @@ def test_get_neighbors(graph_test):
     assert actual == expected
 
     actual = graph_test.get_neighbors('x')
-    expected = 'This value is not exist'
+    expected = None
     assert actual == expected
 
 def test_size(graph_test):
@@ -64,6 +64,20 @@ def test_size(graph_test):
     expected = 4
     assert actual == expected
 
+
+def test_breadth_first_search(graph_test):
+    actual = graph_test.breadth_first_search('B')
+    expected = ['B', 'D']
+    assert actual == expected
+
+    graph_test.add_edge('D','A')
+    actual2 = graph_test.breadth_first_search('B')
+    expected2 = ['B', 'D', 'A', 'C']
+    assert actual2 == expected2
+
+    actual3 = graph_test.breadth_first_search('n')
+    expected3 = 'value not exist'
+    assert actual3 == expected3
 
 @pytest.fixture
 def graph_test():
