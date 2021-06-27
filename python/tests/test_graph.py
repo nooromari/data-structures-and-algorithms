@@ -25,10 +25,6 @@ def test_add_graph():
     expected2 = 'A:[], '
     assert actual2 == expected2
 
-    actual3 = g.add_node('A')
-    expected3 = 'This value is already exist'
-    assert actual3 == expected3
-
 def test_add_edge(graph_test):
     """ An edge can be successfully added to the graph """
     actual = str(graph_test)
@@ -41,7 +37,7 @@ def test_add_edge(graph_test):
 
 def test_get_nodes(graph_test):
     """ A collection of all nodes can be properly retrieved from the graph """
-    actual = graph_test.get_nodes()
+    actual = [n for n in graph_test.get_nodes()]
     expected = ['A', 'B', 'C', 'D'] 
     assert actual == expected
 
@@ -76,7 +72,6 @@ def graph_test():
     g.add_node('B')
     g.add_node('C')
     g.add_node('D')
-    g.add_node('A')
     g.add_edge('A','B',9)
     g.add_edge('A','C')
     g.add_edge('B','D')

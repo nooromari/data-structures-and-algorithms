@@ -1,4 +1,4 @@
-from collections import deque
+# from collections import deque
 from Data_Structures.stacks_and_queues.stacks_and_queues import Queue
 
 
@@ -17,12 +17,9 @@ class Graph:
 
     def add_node(self, value):
         """ Add a node to the graph and return the value """
-        if value not in self._adjacency_list:
-            v = Vertex(value)
-            self._adjacency_list[v.value] = []
-            return v.value
-        else: 
-            return 'This value is already exist'
+        v = Vertex(value)
+        self._adjacency_list[v.value] = []
+        return v.value
 
 
     def add_edge(self, start_v , end_v, wight=0):
@@ -34,8 +31,8 @@ class Graph:
 
     def get_nodes(self):
         """ Returns all of the nodes in the graph as a collection """
-        nodes = [v for v in self._adjacency_list]
-        return nodes
+        # nodes = [v for v in self._adjacency_list]
+        return self._adjacency_list.keys()
 
     def get_neighbors(self , vertex):
         """ Returns a collection of edges connected to the given node """
