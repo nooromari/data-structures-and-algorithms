@@ -86,5 +86,29 @@ Big O:
 
 ![graph-breadth-first](../../challenges/assets/graph-breadth-first.jpg)
 
+
+# Depth First Traversal
+
+## Challenge 38
+<!-- Description of the challenge -->
+Write the depth first method for the Graph class:
+
+- Arguments: An adjacency list as a graph
+- Return: A collection of nodes in their pre-order depth-first traversal order
+- Display the collection
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O:
+- Time -> O(n)
+- Space -> O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+![graph-depth-first](../../challenges/assets/graph-depth-first.jpg)
+
+
 [code](graph.py)
+
 

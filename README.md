@@ -38,3 +38,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [graph](python/Data_Structures/graph)
 1. [graph-breadth-first](python/Data_Structures/graph)
 1. [graph-business-trip](python/challenges/graph_business_trip)
+1. [graph-depth-first](python/Data_Structures/graph)

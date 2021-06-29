@@ -1,5 +1,6 @@
 # from collections import deque
-from Data_Structures.stacks_and_queues.stacks_and_queues import Queue
+# from python.tests.test_graph_business_trip import graph
+from Data_Structures.stacks_and_queues.stacks_and_queues import Queue, Stack
 
 
 class Vertex:
@@ -73,6 +74,36 @@ class Graph:
         except TypeError:
             return 'value not exist'
 
+    def depth_first(self, start_vertex):
+        """ Return A collection of nodes in their pre-order depth-first traversal order """
+        try:
+            visited = []
+            def walk(vertex):
+                visited.append(vertex)
+                neighbors = self.get_neighbors(vertex)
+                for neighbor in neighbors:
+                    if neighbor[0] not in visited:
+                        walk(neighbor[0])
+
+            walk(start_vertex)
+            return visited
+        except TypeError:
+            return 'Start vertex is not found in the graph'
+
+        # vertexes = []
+        # visited = []
+        # stack = Stack()
+        # visited.append(start_vertex)
+        # stack.push(start_vertex)
+        # while not stack.is_empty():
+        #     vertex = stack.pop()
+        #     vertexes.append(vertex)
+        #     vertex_neighbors = self.get_neighbors(vertex)
+        #     for neighbor in vertex_neighbors:
+        #         if neighbor[0] not in visited :
+        #             visited.append(neighbor[0])
+        #             stack.push(neighbor[0])
+        # return vertexes
     
 
     def __str__(self) :
@@ -108,7 +139,33 @@ if __name__ == "__main__":
     # print(g.get_neighbors('C'))
     # print(g.get_neighbors('v'))
     print('-----------------------')
-    print(g.breadth_first_search(''))
+    print(g.breadth_first_search('A'))
+    print(g.depth_first('A'))
+
+    graph = Graph()
+
+    graph.add_node('Jordan')
+    graph.add_node('Syria')
+    graph.add_node('KSA')
+    graph.add_node('Iraq')
+    graph.add_node('Turkey')
+    graph.add_edge('Jordan', 'KSA',35)
+    graph.add_edge('KSA', 'Jordan',35)
+    graph.add_edge('Jordan', 'Iraq',30)
+    graph.add_edge('Iraq', 'Jordan',30)
+    graph.add_edge('KSA', 'Iraq',40)
+    graph.add_edge('Iraq', 'KSA',40)
+    graph.add_edge('Turkey', 'Iraq',35)
+    graph.add_edge('Iraq', 'Turkey',35)
+    graph.add_edge('Iraq', 'Syria',25)
+    graph.add_edge('Syria', 'Iraq',25)
+    graph.add_edge('Syria', 'Turkey',40)
+    graph.add_edge('Turkey', 'Syria',40)
+    graph.add_edge('Jordan', 'Syria',20)
+    graph.add_edge('Syria', 'Jordan',20)
+
+    print(graph.breadth_first_search('Iraq'))
+    print(graph.depth_first('Iraq'))
 
 
 
