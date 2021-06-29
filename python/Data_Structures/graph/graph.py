@@ -76,18 +76,19 @@ class Graph:
 
     def depth_first(self, start_vertex):
         """ Return A collection of nodes in their pre-order depth-first traversal order """
-        if start_vertex not in self._adjacency_list:
-            raise KeyError('Start vertex is not found in the graph')
-        visited = []
-        def walk(vertex):
-            visited.append(vertex)
-            neighbors = self.get_neighbors(vertex)
-            for neighbor in neighbors:
-                if neighbor[0] not in visited:
-                    walk(neighbor[0])
+        try:
+            visited = []
+            def walk(vertex):
+                visited.append(vertex)
+                neighbors = self.get_neighbors(vertex)
+                for neighbor in neighbors:
+                    if neighbor[0] not in visited:
+                        walk(neighbor[0])
 
-        walk(start_vertex)
-        return visited
+            walk(start_vertex)
+            return visited
+        except TypeError:
+            return 'Start vertex is not found in the graph'
 
         # vertexes = []
         # visited = []
