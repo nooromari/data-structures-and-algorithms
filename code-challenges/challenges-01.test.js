@@ -12,7 +12,7 @@ const addOne = (arr) => {
   // Solution code here...
   let arrNum=[];
   arr.forEach(element => {
-    arrNum.push(element + 1)
+    arrNum.push(element + 1);
   });
   return arrNum;
 };
@@ -29,8 +29,8 @@ const addExclamation = (arr) => {
   // Solution code here...
   let newArr=[];
   arr.forEach(element =>{
-    newArr.push(element+'!')
-  })
+    newArr.push(element+'!');
+  });
   return newArr;
 
 };
@@ -47,8 +47,8 @@ const allUpperCase = (arr) => {
   // Solution code here...
   let upArr=[];
   arr.forEach(element =>{
-    upArr.push(element.toUpperCase())
-  })
+    upArr.push(element.toUpperCase());
+  });
   return upArr;
 };
 
@@ -152,6 +152,21 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  let new_arr = arr.map(val => {
+    if (val % 15 === 0){
+      return 'Fizz Buzz';
+    }
+    else if (val % 5 === 0) {
+      return 'Buzz';
+    }
+    else if (val % 3 ===0){
+      return 'Fizz';
+    }
+    else{
+      return val;
+    }
+  });
+  return new_arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,7 +220,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {

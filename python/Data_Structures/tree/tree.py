@@ -174,6 +174,28 @@ class Binary_search_tree:
         return False
 
 
+
+def build_BST(array):
+	# mid_index = (len(array)//2)
+  def helper(arr): 
+    if not len(arr):
+      return
+    mid_index = (len(arr)//2)
+    mid_point = arr.pop(mid_index)
+    node = TNode(mid_point)
+    if len(arr) == 1:
+      return node
+    left = arr[:mid_index]
+    right = arr[mid_index:]
+    node.left = helper(left)
+    node.right = helper(right)
+    return node
+
+  node = helper(array)
+  bst = Binary_tree(node)
+  return bst
+
+
 if __name__ == "__main__":
   node1 = TNode(2)
   node1.left = TNode(7)
@@ -185,15 +207,15 @@ if __name__ == "__main__":
   node1.right.right = TNode(9)
   node1.right.right.left = TNode(4)
   binary_tree = Binary_tree(node1)
-  print(binary_tree.pre_order())
-  print("-"*20)
-  print(binary_tree.in_order())
+  # print(binary_tree.pre_order())
+  # print("-"*20)
+  # print(binary_tree.in_order())
 
-  print("-"*20)
-  print(binary_tree.post_order())
+  # print("-"*20)
+  # print(binary_tree.post_order())
 
-  print(binary_tree.find_maximum_value())
-  print(binary_tree.breadth_first())
+  # print(binary_tree.find_maximum_value())
+  # print(binary_tree.breadth_first())
 
   sb = Binary_search_tree()
   sb.add(5)
@@ -204,5 +226,6 @@ if __name__ == "__main__":
   sb.add(6)
   sb.add(100)
   sb.add(0)
-  print(sb.contains(3),sb.contains(13))
-  print(sb.in_order())
+  # print(sb.contains(3),sb.contains(13))
+  # print(sb.in_order())
+  print(build_BST([1, 3, 4, 5, 6, 7, 8]).in_order())
